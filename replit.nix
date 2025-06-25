@@ -1,7 +1,11 @@
+
 { pkgs }: {
   deps = [
     pkgs.python311
-    pkgs.ffmpeg
-    pkgs.libx264
+    pkgs.python311Packages.pillow
+    pkgs.python311Packages.moviepy
+    pkgs.python311Packages.setuptools
+    pkgs.python311Packages.pip
+    pkgs.ffmpeg_4
   ];
 }
