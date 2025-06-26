@@ -1,11 +1,11 @@
-
 { pkgs }: {
   deps = [
-    pkgs.python311
-    pkgs.python311Packages.pillow
-    pkgs.python311Packages.moviepy
-    pkgs.python311Packages.setuptools
-    pkgs.python311Packages.pip
-    pkgs.ffmpeg_4
+    pkgs.ffmpeg
+    pkgs.libjpeg
+    pkgs.zlib
+    pkgs.freetype
+    pkgs.python3
+    pkgs.python3Packages.pillow
+    pkgs.python3Packages.setuptools
   ];
 }
