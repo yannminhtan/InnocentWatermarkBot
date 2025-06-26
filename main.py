@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 from moviepy.editor import VideoFileClip, CompositeVideoClip, ImageClip
 import tempfile
 
-BOT_TOKEN = "7108728931:AAEl5pnnsd5iwKDRKSSMrIQ10S5Z0lzetww"
+BOT_TOKEN = os.getenv("BOT_TOKEN")"
 WATERMARK_FILE = "Innocent.png"
 
 async def add_watermark_photo(image_path):
