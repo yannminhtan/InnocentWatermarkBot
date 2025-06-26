@@ -5,5 +5,6 @@
     pkgs.zlib
     pkgs.freetype
     pkgs.python3
+    pkgs.python3Packages.setuptools
   ];
 }
