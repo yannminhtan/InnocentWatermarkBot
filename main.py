@@ -8,7 +8,7 @@ import tempfile
 BOT_TOKEN = os.getenv("BOT_TOKEN")"
 WATERMARK_FILE = "Innocent.png"
 
-async def add_watermark_photo(image_path):
+async def add_watermark_photo(image_path): 
     base = Image.open(image_path).convert("RGBA")
     watermark = Image.open(WATERMARK_FILE).convert("RGBA")
     w_ratio = base.width // 5
