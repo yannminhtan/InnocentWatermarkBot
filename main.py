@@ -1,11 +1,11 @@
 import os
 from telegram import Update, InputMediaPhoto, InputMediaVideo
 from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTypes
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 from moviepy.editor import VideoFileClip, CompositeVideoClip, ImageClip
 import tempfile
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")"
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 WATERMARK_FILE = "Innocent.png"
 
 async def add_watermark_photo(image_path): 
@@ -40,7 +40,7 @@ async def handle_media_group(update: Update, context: ContextTypes.DEFAULT_TYPE)
     context.user_data.setdefault(media_group_id, [])
     context.user_data[media_group_id].append(update.message)
 
-    if len(context.user_data[media_group_id]) >= 10 or update.message == context.user_data[media_group_id][-1]:
+    if len(context.user_data[media_group_id]) >= 10 or all(m.message_id != update.message.message_id for m in context.user_data[media_group_id]):
         messages = context.user_data.pop(media_group_id)
         media = []
         for msg in messages:
